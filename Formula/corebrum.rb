@@ -9,10 +9,10 @@ class Corebrum < Formula
   
     on_macos do
       if Hardware::CPU.intel?
-        url "https://github.com/corebrum/corebrum/releases/download/v0.2.73/corebrum-x86_64-apple-darwin.tar.xz"
+        url "https://github.com/Corebrum/corebrum/releases/download/v0.2.74/corebrum-x86_64-apple-darwin.tar.xz"
         sha256 "PLACEHOLDER_INTEL_SHA256"
       else
-        url "https://github.com/corebrum/corebrum/releases/download/v0.2.73/corebrum-aarch64-apple-darwin.tar.xz"
+        url "https://github.com/Corebrum/corebrum/releases/download/v0.2.74/corebrum-aarch64-apple-darwin.tar.xz"
         sha256 "PLACEHOLDER_ARM_SHA256"
       end
     end
@@ -25,5 +25,4 @@ class Corebrum < Formula
       system "#{bin}/corebrum", "--version"
     end
   end
-  
   
