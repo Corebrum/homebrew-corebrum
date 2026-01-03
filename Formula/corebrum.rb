@@ -17,8 +17,11 @@ class Corebrum < Formula
         end
     end
   
+    def install
+      bin.install "corebrum"
+    end
+  
     test do
       system "#{bin}/corebrum", "--version"
     end
   end
-  
