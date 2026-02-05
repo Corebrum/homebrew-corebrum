@@ -4,7 +4,14 @@ class Corebrum < Formula
   license "All Rights Reserved"
   version "0.2.183"
 
-  def install\n    if Hardware::CPU.intel?\n      bin.install "corebrum-x86_64-apple-darwin/corebrum" => "corebrum"\n    else\n      bin.install "corebrum-aarch64-apple-darwin/corebrum" => "corebrum"\n    end\n  end
+
+  def install
+    if Hardware::CPU.intel?
+      bin.install "corebrum-x86_64-apple-darwin/corebrum" => "corebrum"
+    else
+      bin.install "corebrum-aarch64-apple-darwin/corebrum" => "corebrum"
+    end
+  end
   on_macos do
     if Hardware::CPU.intel?
       url "https://corebrum-releases.s3.amazonaws.com/releases/v0.2.183/corebrum-x86_64-apple-darwin.tar.xz"
