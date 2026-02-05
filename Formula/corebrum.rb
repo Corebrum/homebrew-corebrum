@@ -5,6 +5,7 @@ class Corebrum < Formula
   version "0.2.183"
 
 
+
   def install
     if Hardware::CPU.intel?
       bin.install "corebrum-x86_64-apple-darwin/corebrum" => "corebrum"
@@ -21,3 +22,4 @@ class Corebrum < Formula
       sha256 "a1e36f6374557acaa58a73444993867d09fdaf778f270a5c9934471e8f474646"
     end
   end
+end
