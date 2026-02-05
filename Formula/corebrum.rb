@@ -9,9 +9,11 @@ class Corebrum < Formula
 
 
 
+
   def install
-    arch_dir = Hardware::CPU.intel? ? "corebrum-x86_64-apple-darwin" : "corebrum-aarch64-apple-darwin"
-    bin.install File.join(buildpath, arch_dir, "corebrum")
+    binary = Dir["**/corebrum"].find { |f| File.file?(f) && File.executable?(f) }
+    raise "Could not find corebrum binary" if binary.nil?
+    bin.install binary
   end
   on_macos do
     if Hardware::CPU.intel?
