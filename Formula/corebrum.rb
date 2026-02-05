@@ -8,10 +8,10 @@ class Corebrum < Formula
 
 
 
+
   def install
     arch_dir = Hardware::CPU.intel? ? "corebrum-x86_64-apple-darwin" : "corebrum-aarch64-apple-darwin"
-    system "cp", "#{arch_dir}/corebrum", "#{bin}/corebrum"
-    system "chmod", "+x", "#{bin}/corebrum"
+    bin.install File.join(buildpath, arch_dir, "corebrum")
   end
   on_macos do
     if Hardware::CPU.intel?
