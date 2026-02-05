@@ -6,11 +6,12 @@ class Corebrum < Formula
 
 
 
+
   def install
     if Hardware::CPU.intel?
-      bin.install "corebrum-x86_64-apple-darwin/corebrum" => "corebrum"
+      bin.install buildpath.join("corebrum-x86_64-apple-darwin", "corebrum")
     else
-      bin.install "corebrum-aarch64-apple-darwin/corebrum" => "corebrum"
+      bin.install buildpath.join("corebrum-aarch64-apple-darwin", "corebrum")
     end
   end
   on_macos do
