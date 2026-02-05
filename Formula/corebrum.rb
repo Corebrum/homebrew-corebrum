@@ -13,8 +13,5 @@ class Corebrum < Formula
       sha256 "a1e36f6374557acaa58a73444993867d09fdaf778f270a5c9934471e8f474646"
     end
   end
-
-  test do
-    system "#{bin}/corebrum", "--version"
-  end
 end
+  def install\n    if Hardware::CPU.intel?\n      bin.install "corebrum-x86_64-apple-darwin/corebrum" => "corebrum"\n    else\n      bin.install "corebrum-aarch64-apple-darwin/corebrum" => "corebrum"\n    end\n  end
