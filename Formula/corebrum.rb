@@ -2,7 +2,8 @@ class Corebrum < Formula
   desc "Unified Corebrum platform - daemon, CLI, and mesh operating system for decentralized computing"
   homepage "https://github.com/corebrum/corebrum"
   license "All Rights Reserved"
-  version "0.2.202"
+  version "0.2.216"
+
 
 
 
@@ -17,19 +18,19 @@ class Corebrum < Formula
     raise "Could not find corebrum binary" if binary.nil?
     bin.install binary
     
-    # Install dist directory next to binary (for web UI)
+    # Install dist directory to share (Homebrew convention, for web UI)
     dist_dir = Dir["**/dist"].find { |f| File.directory?(f) }
     if dist_dir
-      system "cp", "-r", dist_dir, "#{bin}/dist"
+      (share/"corebrum").install dist_dir
     end
   end
   on_macos do
     if Hardware::CPU.intel?
-      url "https://corebrum-releases.s3.amazonaws.com/releases/v0.2.202/corebrum-x86_64-apple-darwin.tar.xz"
-      sha256 "598be5451a3a02e5b87bbfc032b7645d8c8ad4dc42bc8d252ca7ca1a1790b46f"
+      url "https://corebrum-releases.s3.amazonaws.com/releases/v0.2.216/corebrum-x86_64-apple-darwin.tar.xz"
+      sha256 "3588bfdba575e81f6ada7d6279dcb85f977990f949d1cd6532df22451b28a81c"
     else
-      url "https://corebrum-releases.s3.amazonaws.com/releases/v0.2.202/corebrum-aarch64-apple-darwin.tar.xz"
-      sha256 "fb5ba1373161d9714d1c81ff2263f4044afe80de4b29ba5f7eee4975acfe297a"
+      url "https://corebrum-releases.s3.amazonaws.com/releases/v0.2.216/corebrum-aarch64-apple-darwin.tar.xz"
+      sha256 "858c960e6e1b974e63edfaad767cc48aa32eb339fffe4986cab3d67c372393e8"
     end
   end
 end
