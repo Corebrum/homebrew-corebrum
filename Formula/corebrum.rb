@@ -2,7 +2,8 @@ class Corebrum < Formula
   desc "Unified Corebrum platform - daemon, CLI, and mesh operating system for decentralized computing"
   homepage "https://github.com/corebrum/corebrum"
   license "All Rights Reserved"
-  version "0.3.8"
+  version "0.3.9"
+
 
 
 
@@ -34,11 +35,11 @@ class Corebrum < Formula
   end
   on_macos do
     if Hardware::CPU.intel?
-      url "https://corebrum-releases.s3.amazonaws.com/releases/v0.3.8/corebrum-x86_64-apple-darwin.tar.xz"
-      sha256 "234f06a89fa76aa7998739565471d24ac41da8b98e372444824f0bee139cf0c6"
+      url "https://corebrum-releases.s3.amazonaws.com/releases/v0.3.9/corebrum-x86_64-apple-darwin.tar.xz"
+      sha256 "e32683895a92c918a00a42b5b0eb871fe5e5f75122cd159d53232db225cb996a"
     else
-      url "https://corebrum-releases.s3.amazonaws.com/releases/v0.3.8/corebrum-aarch64-apple-darwin.tar.xz"
-      sha256 "1225bbf01e1da5ea5f499bc5c0adce3cad00cd245a73c0c275f76936bea4ac4b"
+      url "https://corebrum-releases.s3.amazonaws.com/releases/v0.3.9/corebrum-aarch64-apple-darwin.tar.xz"
+      sha256 "c0398772b10e57a469cbcd94900a956a2d0a0e5a83d3f4e7a4da9ffda3ccc99d"
     end
   end
 end
