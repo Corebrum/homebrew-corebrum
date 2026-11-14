@@ -30,5 +30,3 @@ class Cortex < Formula
     end
   end
 end
-
-end
